@@ -24,6 +24,11 @@ struct Sample {
 struct SampleDataSource {
     let samples = [
         Sample(
+            title: "ReferenceImage Detection",
+            detail: "A sample to show how simply ARKit can detect ReferenceImage",
+            classPrefix: "ReferenceImage"
+        ),
+        Sample(
             title: "3 lines AR",
             detail: "A simple AR with 3 lines code.",
             classPrefix: "Simple"

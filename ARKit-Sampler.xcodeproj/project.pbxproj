@@ -54,6 +54,9 @@
 		8ADD3E7E1FF175AC00D988BD /* ARFaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD3E7D1FF175AC00D988BD /* ARFaceNode.swift */; };
 		8AEDCA3E201F7BE200C56AF7 /* VerticalPlanesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEDCA3D201F7BE100C56AF7 /* VerticalPlanesViewController.swift */; };
 		8AEDCA40201F7BFE00C56AF7 /* VerticalPlanes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEDCA3F201F7BFE00C56AF7 /* VerticalPlanes.storyboard */; };
+		8C04761A2122E101001B52B0 /* ReferenceImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0476182122E101001B52B0 /* ReferenceImage.storyboard */; };
+		8C04761B2122E101001B52B0 /* ReferenceImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0476192122E101001B52B0 /* ReferenceImageViewController.swift */; };
+		8C04761D2122E2D0001B52B0 /* ARImageAnchor+Visualize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C04761C2122E2D0001B52B0 /* ARImageAnchor+Visualize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +110,9 @@
 		8ADD3E7D1FF175AC00D988BD /* ARFaceNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFaceNode.swift; sourceTree = "<group>"; };
 		8AEDCA3D201F7BE100C56AF7 /* VerticalPlanesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalPlanesViewController.swift; sourceTree = "<group>"; };
 		8AEDCA3F201F7BFE00C56AF7 /* VerticalPlanes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VerticalPlanes.storyboard; sourceTree = "<group>"; };
+		8C0476182122E101001B52B0 /* ReferenceImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReferenceImage.storyboard; sourceTree = "<group>"; };
+		8C0476192122E101001B52B0 /* ReferenceImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceImageViewController.swift; sourceTree = "<group>"; };
+		8C04761C2122E2D0001B52B0 /* ARImageAnchor+Visualize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARImageAnchor+Visualize.swift"; sourceTree = "<group>"; };
 		8FBAFB21E706B4A02B0EA992 /* Pods-ARKit-Sampler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit-Sampler.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit-Sampler/Pods-ARKit-Sampler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +148,7 @@
 		8A086D951F71967800951ABF /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				8C0476172122E0D2001B52B0 /* ReferenceImage */,
 				8A9C49B71F71AC6600C8CB69 /* Simple */,
 				8A9C49B81F71AC7F00C8CB69 /* PlaneDetection */,
 				8A9C49BA1F71AC9100C8CB69 /* VirtualObject */,
@@ -166,6 +173,7 @@
 				8A086D9F1F7198D900951ABF /* SceneKitUtils.swift */,
 				8A086DA01F7198D900951ABF /* TrackingState+Description.swift */,
 				8A9C49C21F71B12D00C8CB69 /* VirtualObjectNode.swift */,
+				8C04761C2122E2D0001B52B0 /* ARImageAnchor+Visualize.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -339,6 +347,15 @@
 			path = VerticalPlanes;
 			sourceTree = "<group>";
 		};
+		8C0476172122E0D2001B52B0 /* ReferenceImage */ = {
+			isa = PBXGroup;
+			children = (
+				8C0476182122E101001B52B0 /* ReferenceImage.storyboard */,
+				8C0476192122E101001B52B0 /* ReferenceImageViewController.swift */,
+			);
+			path = ReferenceImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,7 +391,7 @@
 				TargetAttributes = {
 					8A8921C51F718E040087C2B0 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -408,6 +425,7 @@
 				8A9C49BF1F71ACAF00C8CB69 /* ARInteraction.storyboard in Resources */,
 				8A8921D11F718E040087C2B0 /* Assets.xcassets in Resources */,
 				8A9C49CD1F71BF0500C8CB69 /* ARDrawing.storyboard in Resources */,
+				8C04761A2122E101001B52B0 /* ReferenceImage.storyboard in Resources */,
 				8A430D332020D13200B646D3 /* ARSCNProgram.storyboard in Resources */,
 				8A086D971F71968C00951ABF /* Simple.storyboard in Resources */,
 				8A086DA81F719C2600951ABF /* PlaneDetection.storyboard in Resources */,
@@ -490,12 +508,14 @@
 				8A9C49D91F71C65B00C8CB69 /* Inceptionv3.mlmodel in Sources */,
 				8A8921CA1F718E040087C2B0 /* AppDelegate.swift in Sources */,
 				8AEDCA3E201F7BE200C56AF7 /* VerticalPlanesViewController.swift in Sources */,
+				8C04761B2122E101001B52B0 /* ReferenceImageViewController.swift in Sources */,
 				8A086DA11F7198D900951ABF /* ARPlaneAnchor+Visualize.swift in Sources */,
 				8ADD3E7E1FF175AC00D988BD /* ARFaceNode.swift in Sources */,
 				8A9C49E71F71CEC600C8CB69 /* Shaders.metal in Sources */,
 				8A9C49CE1F71BF0500C8CB69 /* ARDrawingViewController.swift in Sources */,
 				8A086D991F7196A300951ABF /* SimpleViewController.swift in Sources */,
 				8A9C49CF1F71BF0500C8CB69 /* DynamicGeometry.swift in Sources */,
+				8C04761D2122E2D0001B52B0 /* ARImageAnchor+Visualize.swift in Sources */,
 				8ADD3E7A1FF16CE500D988BD /* ARFaceSimpleViewController.swift in Sources */,
 				8A086DA71F719C2600951ABF /* PlaneDetectionViewController.swift in Sources */,
 				8A8921DE1F7191370087C2B0 /* SampleDataSource.swift in Sources */,
@@ -653,13 +673,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z86A4AWDE;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4MN522WN87;
 				INFOPLIST_FILE = "ARKit-Sampler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shu223.ARKit-Sampler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "36a7de58-b4bf-4f6b-b7f5-5c7f6badd47d";
+				PROVISIONING_PROFILE_SPECIFIER = "Debug for Device";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -671,13 +693,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z86A4AWDE;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "ARKit-Sampler/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shu223.ARKit-Sampler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
